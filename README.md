@@ -1,6 +1,7 @@
 # Proposal: The CSS `:=` reference selector
-This is a proposal for CSS attribute selectors that reference other elements.
-Here's the proposed form:
+This is a proposed extension to CSS attribute selectors that would allow
+authors to target elements that _reference_ other, specific types of elements.
+The proposed form is:
 
 ```
 [attr:=selector]
