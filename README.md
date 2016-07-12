@@ -1,5 +1,26 @@
 # Proposal: The CSS `:=` reference selector
 This is a proposal for CSS attribute selectors that reference other elements.
+Here's the proposed form:
+
+```
+[attr:=selector]
+```
+
+where `attr` is an attribute name, and `selector` is a [simple selector].
+Here are some examples:
+
+```css
+/* any <label> that references a <select> */
+[for:=select] { }
+
+/* any element that controls a menu */
+[aria-controls:=menu] {}
+
+/* any element labeled by a tooltip role */
+[aria-labelledby:=[role=tooltip]] { }
+```
+
+## Rationale
 Here's why this is useful:
 
 1. Styling accessible forms that use `<label>` elements and the `for`
@@ -27,25 +48,8 @@ Here's why this is useful:
   * any `<button>` that [controls](https://www.w3.org/TR/wai-aria/states_and_properties#aria-controls) a `<menu>`
   * any element that is [labeled by](https://www.w3.org/TR/wai-aria/states_and_properties#aria-labelledby) an element with `aria-role="tooltip"`
 
-Here's the proposed form:
-
-```
-[attr:=selector]
-```
-
-Where `attr` is an attribute name, and `selector` is a [simple selector].
-Here are some examples:
-
-```css
-/* any <label> that references a <select> */
-[for:=select] { }
-
-/* any element that controls a menu */
-[aria-controls:=menu] {}
-
-/* any element labeled by a tooltip role */
-[aria-labelledby:=[role=tooltip]] { }
-```
+If you have thoughts or can help me articulate situations in which this
+would be useful, please [file an issue](issues/).
 
 [ARIA]: https://www.w3.org/TR/wai-aria/
 [simple selector]: https://www.w3.org/TR/selectors/#simple-selectors
