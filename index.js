@@ -20,7 +20,7 @@ module.exports = function parseReferenceSelector(selector) {
       return false;
     }
     // assume a list of space-separated ids
-    var ids = element.getAttribute(attr)ids.trim().split(/\s+/);
+    var ids = element.getAttribute(attr).trim().split(/\s+/);
     // return true if any id references an element that matches the selector
     return ids.some(function(id) {
       var ref = document.getElementById(id);
